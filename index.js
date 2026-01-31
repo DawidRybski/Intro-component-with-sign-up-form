@@ -17,6 +17,7 @@ function clearErrors(field) {
 
 function addWrongEmailPatternMessage(emailField){
     var errorId = $(emailField).attr("id") + "-error";
+    $(emailField).attr("aria-describedby", errorId);
     $(emailField).closest(".field-control").append('<p id="' + errorId + '" class="validation-message" role="alert">Looks like this is not an email</p>');
     $(emailField).addClass("validate-border");
     $(emailField).siblings(".error-icon").show();
@@ -24,6 +25,7 @@ function addWrongEmailPatternMessage(emailField){
 
 function addBlankFieldErrors(field, fieldPlaceholder){
     var errorId = $(field).attr("id") + "-error";
+    $(field).attr("aria-describedby", errorId);
     $(field).closest(".field-control").append('<p id="' + errorId + '" class="validation-message" role="alert">'+ fieldPlaceholder +' cannot be empty</p>');
     $(field).siblings(".error-icon").show();
 }
