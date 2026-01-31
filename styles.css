@@ -1,0 +1,210 @@
+:root{
+    --radius-card: 0.5rem;
+    --radius-button: 0.25rem;
+    --radius-field: 0.25rem;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    --primary-color: hsl(0, 100%, 74%);
+    --color-neutral-purple: hsl(248, 32%, 49%);
+
+    --gradient-active-button: linear-gradient( 
+    to bottom, 
+        hsl(154, 59%, 51%) 0%, 
+        hsl(154, 59%, 51%) 90%, 
+        hsl(154, 59%, 41%) 100%
+    );
+    --gradient-pressed-button: linear-gradient(
+        to top,
+        hsl(154, 59%, 56%) 0%,
+        hsl(154, 59%, 56%) 90%,
+        hsl(154, 59%, 46%) 100%
+    );
+    --gradient-disabled-button: linear-gradient(
+        to bottom,
+        hsl(154, 49%, 63%) 0%,
+        hsl(154, 53%, 62%) 90%,
+        hsl(154, 59%, 46%) 100%
+    );
+
+    --button-shadow: 0 4px 10px hsl(154, 59%, 41%, 0.25);
+    --card-shadow: 0px 5px hsl(0, 0%, 12%, 0.2);
+
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+}
+
+body{
+    background-image: url("/images/bg-intro-desktop.png");
+    background-color: var(--primary-color);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    gap: var(--spacing-xl);
+}
+
+.description{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    color: white;
+    max-width: 620px;
+}
+
+h1{
+    font-size: 3rem;
+    margin: 0;
+}
+
+#sign-up{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-card);
+    gap: var(--spacing-md);
+    box-shadow: var(--card-shadow);
+}
+
+.field-control {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.field{
+    border: 1px solid lightgray;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-field);
+    font-weight: var(--font-weight-semibold);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.field:focus-visible{
+    outline: none;
+    border: 1px solid var(--color-neutral-purple);
+}
+
+.validate-border{
+    border: 2px solid var(--primary-color);
+}
+
+.validation-message{
+    color: var(--primary-color);
+    font-size: 0.65rem;
+    text-align: right;
+    font-style: italic;
+    margin: 0;
+}
+
+.error-icon{
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    top: 25%;
+    right: 20px;
+    display: none;
+}
+
+footer{
+    margin-top: auto;
+}
+
+#sign-up > p {
+    background-color: var(--color-neutral-purple);
+    border-radius: var(--radius-card);
+    padding: var(--spacing-md);
+    text-align: center;
+    color: white;
+    box-shadow: var(--card-shadow);
+}
+
+span{
+    font-weight: bold;
+}
+
+button{
+    background: var(--gradient-active-button);
+    border-radius: var(--radius-button);
+    border: 1px solid hsl(154, 59%, 41%);
+    padding: var(--spacing-md);
+    color: white;
+    font-weight: var(--font-weight-semibold);
+}
+
+button:not(:disabled):hover{
+    box-shadow: var(--button-shadow);
+}
+
+button:not(:disabled):active{
+    box-shadow: var(--button-shadow);
+    background: var(--gradient-pressed-button);
+}
+
+button:disabled{
+    background: var(--gradient-disabled-button);
+}
+
+.terms{
+    font-size: 0.6rem;
+    margin: 0;
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+    color: lightgray;
+}
+
+.terms>span{
+    color: var(--primary-color);
+}
+
+@media (max-width: 480px){
+    body{
+        background-image: url("/images/bg-intro-mobile.png");
+        background-size: contain;
+    }
+
+    .container{
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .description{
+        text-align: center;
+        max-width: 300px;
+    }
+
+    #sign-up{
+        max-width: 300px;
+    }
+}
