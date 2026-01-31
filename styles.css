@@ -39,7 +39,7 @@
 }
 
 body{
-    background-image: url("/images/bg-intro-desktop.png");
+    background-image: url("images/bg-intro-desktop.png");
     background-color: var(--primary-color);
     font-family: "Poppins", sans-serif;
     font-size: 16px;
@@ -185,7 +185,7 @@ button:disabled{
 
 @media (max-width: 480px){
     body{
-        background-image: url("/images/bg-intro-mobile.png");
+        background-image: url("images/bg-intro-mobile.png");
         background-size: contain;
     }
 
